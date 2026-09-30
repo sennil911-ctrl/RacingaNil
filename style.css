@@ -1,0 +1,293 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #222;
+}
+
+/* GAME AREA */
+#game {
+    position: relative;
+    width: 300px;
+    height: 100vh;
+    max-height: 700px;
+    margin: auto;
+    overflow: hidden;
+
+    background: #555;
+
+    border-left: 6px solid white;
+    border-right: 6px solid white;
+}
+
+/* ROAD LINES */
+.line {
+    position: absolute;
+    width: 8px;
+    height: 80px;
+
+    left: 146px;
+
+    background: white;
+
+    animation: roadMove 0.5s linear infinite;
+}
+
+.line1 {
+    top: 0;
+}
+
+.line2 {
+    top: 160px;
+}
+
+.line3 {
+    top: 320px;
+}
+
+.line4 {
+    top: 480px;
+}
+
+@keyframes roadMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(160px);
+    }
+}
+
+/* PLAYER CAR */
+#car {
+    position: absolute;
+
+    width: 50px;
+    height: 80px;
+
+    bottom: 60px;
+    left: 125px;
+
+    background: red;
+
+    border-radius: 12px;
+
+    z-index: 5;
+}
+
+/* CAR WINDOW */
+#car::before {
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+
+    left: 10px;
+    top: 10px;
+
+    background: #87ceeb;
+
+    border-radius: 6px;
+}
+
+/* ENEMY */
+#enemy {
+    position: absolute;
+
+    width: 50px;
+    height: 80px;
+
+    top: -150px;
+    left: 20px;
+
+    background: blue;
+
+    border-radius: 12px;
+
+    z-index: 4;
+}
+
+/* ENEMY WINDOW */
+#enemy::before {
+    content: "";
+
+    position: absolute;
+
+    width: 30px;
+    height: 30px;
+
+    left: 10px;
+    top: 10px;
+
+    background: #87ceeb;
+
+    border-radius: 6px;
+}
+
+/* COIN */
+#coin {
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+
+    top: -300px;
+    left: 125px;
+
+    background: gold;
+
+    border: 4px solid orange;
+
+    border-radius: 50%;
+
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    color: #8a5a00;
+
+    box-shadow: 0 0 10px gold;
+}
+
+/* COIN SYMBOL */
+#coin::after {
+    content: "₹";
+}
+
+/* SCORE */
+#score {
+    position: fixed;
+
+    top: 15px;
+    left: 15px;
+
+    color: white;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    z-index: 100;
+}
+
+/* GAME OVER */
+#gameOver {
+    display: none;
+
+    position: fixed;
+
+    top: 45%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 20px 30px;
+
+    color: white;
+
+    background: red;
+
+    border-radius: 10px;
+
+    font-size: 30px;
+    font-weight: bold;
+
+    z-index: 200;
+}
+
+/* MOBILE BUTTONS */
+#controls {
+    position: fixed;
+
+    bottom: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 30px;
+
+    z-index: 300;
+}
+
+button {
+    width: 70px;
+    height: 55px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+#coinsText {
+    position: fixed;
+    top: 45px;
+    left: 15px;
+    color: gold;
+    font-size: 22px;
+    font-weight: bold;
+    z-index: 100;
+}
+#gameOver button {
+    display: block;
+    margin: 15px auto 0;
+    width: 120px;
+    height: 45px;
+    background: white;
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+}
+/*w*/
+
+#startScreen {
+    position: fixed;
+    inset: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: white;
+}
+
+#startScreen h1 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+#startButton {
+    width: 180px;
+    height: 55px;
+    background: red;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 12px;
+  }
