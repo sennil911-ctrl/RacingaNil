@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racing Game</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+ <div id="score">Score: 0</div>
+<div id="coinsText">Coins: 0</div>
+<div id="highScore">High Score: 0</div>
+  <div id="startScreen">
+    <h1>🏁 RACING GAME</h1>
+    <button id="startButton">START RACE</button>
+  </div>
+    <div id="game">
+
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+        <div class="line line4"></div>
+
+        <div id="car"></div>
+
+        <div id="enemy"></div>
+
+        <div id="coin"></div>
+
+    </div>
+
+    <div id="gameOver">
+    <div>GAME OVER</div>
+    <button id="restartButton">RESTART</button>
+</div>
+
+    <div id="controls">
+        <button onclick="moveLeft()">⬅️</button>
+        <button onclick="moveRight()">➡️</button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        function moveLeft() {
+            document.dispatchEvent(
+                new KeyboardEvent("keydown", { key: "ArrowLeft" })
+            );
+        }
+
+        function moveRight() {
+            document.dispatchEvent(
+                new KeyboardEvent("keydown", { key: "ArrowRight" })
+            );
+        }
+    </script>
+
+</body>
+</html>
